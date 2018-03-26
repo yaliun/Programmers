@@ -24,8 +24,24 @@ public class GetMinMaxString {
         int min = nums[0];
         int max = nums[nums.length -1];
        
-        return min + " " + max;
-  
+        return min + " " + max;  
+    }
+    
+    public String getMinMaxStringBest(String str) {
+    	String[] tmp = str.split(" ");
+    	
+    	int max, min, n;
+    	
+    	max = min = Integer.parseInt(tmp[0]);
+    	
+    	for(int i = 1; i < tmp.length; i++) {
+    		n = Integer.parseInt(tmp[i]);
+    		
+    		if(min > n) min = n;
+    		if(max < n) max = n;
+    	}
+    	
+    	return min + " " + max;
     }
 
     public static void main(String[] args) {
